@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPA Calculator - Professional UI</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>GPA Calculator</h1>
+      <p class="subtitle">Calculate your semester GPA and CGPA easily</p>
+
+      <div class="grid grid-cols-3">
+        <div>
+          <label>Course Name</label>
+          <input type="text" id="courseName" placeholder="Math" />
+        </div>
+        <div>
+          <label>Credits</label>
+          <input type="number" id="credits" placeholder="3" />
+        </div>
+        <div>
+          <label>Grade (0-100)</label>
+          <input type="number" id="grade" placeholder="85" />
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-bottom: 12px">
+        <button class="btn-add" onclick="addCourse()">Add Course</button>
+        <button class="btn-clear" onclick="clearAll()">Clear All</button>
+      </div>
+
+      <div id="coursesList"></div>
+
+      <div class="grid grid-cols-2" style="margin-top: 18px; gap: 12px">
+        <div>
+          <label>Previous CGPA (Optional)</label>
+          <input type="number" id="prevCgpa" step="0.01" placeholder="0.00" />
+        </div>
+        <div>
+          <label>Previous Total Credits</label>
+          <input type="number" id="prevCredits" placeholder="0" />
+        </div>
+      </div>
+
+      <button
+        class="btn-calc"
+        style="margin-top: 18px"
+        onclick="calculateGPA()"
+      >
+        Calculate GPA
+      </button>
+
+      <div class="results">
+        <div class="result-card">
+          <p class="label">Current GPA</p>
+          <p id="currentGpa" class="value">0.00</p>
+        </div>
+        <div class="result-card indigo">
+          <p class="label">Final CGPA</p>
+          <p id="finalGpa" class="value">0.00</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
